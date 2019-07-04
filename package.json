@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "babel-node ./src/index.js",
     "build": "babel src --out-dir bin --ignore test.js",
-    "prepublish":"npm run build"
+    "prepublish": "npm run snyk-protect; npm run build",
+    "snyk-protect": "snyk protect"
   },
   "bin": {
     "ng-start-cli": "bin/index.js"
@@ -32,6 +33,8 @@
     "commander": "~2.9.0",
     "inquirer": "~1.1.3",
     "rx": "~4.1.0",
-    "vinyl-fs": "~2.2.1"
-  }
+    "vinyl-fs": "~2.2.1",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }
